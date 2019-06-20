@@ -8,14 +8,14 @@ def nonlinmin(f, x1, tol = 10**(-6)):
     H = Hessian(f, x1, ab)
     G = Gradient(f, x1, ab)
     x = np.zeros(ab)
-    x2 = x1 - np.linalg.solve(H,G)
+    x2 = x1 - np.linalg.solve(H, G)
     x = x1
     count = 1
     while (np.absolute(x2 - x)> tol):
         x2 = x
         H = Hessian(f, x, ab)
         G = Gradient(f, x, ab)
-        x = x2 - np.linalg.solve(H,G)
+        x = x2 - np.linalg.solve(H, G)
         count = count + 1
-
-    return(x, count)
+    xs = np.array([1, 2, 3], float)
+    return(x, count, xs)
