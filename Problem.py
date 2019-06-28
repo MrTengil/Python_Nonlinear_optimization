@@ -19,6 +19,6 @@ print('Startguess: ', x1)
 print('Converged point: ', x)
 print('Number of iterations:', counter)
 
-# Fix the steps taken 
+# Fix the steps taken
 xs = xs.flatten()
 print('STeps taken:', xs)
