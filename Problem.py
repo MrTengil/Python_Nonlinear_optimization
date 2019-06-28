@@ -18,5 +18,7 @@ print('Function value at starting guess:', f(x1))
 print('Startguess: ', x1)
 print('Converged point: ', x)
 print('Number of iterations:', counter)
+
+# Fix the steps taken 
 xs = xs.flatten()
 print('STeps taken:', xs)
