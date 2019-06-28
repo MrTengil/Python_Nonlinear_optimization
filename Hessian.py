@@ -7,4 +7,5 @@ def Hessian(f, x, ab):
     for i in range(ab):
         for j in range(ab):
             H[i, j] = ( f(x + h*e[:, i] + h*e[:, j]) - f(x + h*e[:, i]) - f(x + h*e[:, j]) + f(x))/(h*h)
+
     return H
