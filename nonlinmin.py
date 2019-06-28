@@ -6,7 +6,7 @@ import numpy as np
 def nonlinmin(f, x1, tol = 10**(-6)):
     ab = x1.size            # The dimension of the problem
     # x1 is the point at which we would like to find the Hessian
-    xs = np.empty(([ab,1]))
+    xs = np.empty(([ab, 1]))    # Initiate the 2d array to save steps
     # Make sure that the guess is a row-vector
     # WRONG! INSTEAD MAKE SURE ITS A COLUMN VECTOR
     #cd = x1.shape
