@@ -3,7 +3,7 @@ from Gradient import *
 from distance import *
 import numpy as np
 
-def nonlinmin(f, x1, tol = 10**(-6)):
+def nonlinmin(f, x1, tol = 10**(-6), maxit = 16):
     ab = x1.size            # The dimension of the problem
     # x1 is the point at which we would like to find the Hessian
     xs = np.empty(([ab, 1]))    # Initiate the 2d array to save steps
@@ -25,7 +25,7 @@ def nonlinmin(f, x1, tol = 10**(-6)):
     x2 = x2.flatten()       # Previous steps creates arrays within arrays. This fixes this. Still new. Let me be!
     x = x.flatten()         # Previous steps creates arrays within arrays. This fixes this. Still new. Let me be!
     d = distance(x2, x, ab)     # How far have we traveled?
-    while (d > tol):            # If traveled further than the tolerance, continue
+    while (d > tol) and (count < maxit):            # If traveled further than the tolerance, continue
         x2 = x
         H = Hessian(f, x, ab)
         G = Gradient(f, x, ab)
