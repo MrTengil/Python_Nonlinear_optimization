@@ -3,22 +3,25 @@ from nonlinmin import *
 import matplotlib.pyplot as plt
 
 
-# Anonoumus function
+# Objective function to minimize
 def f(x):
     return x[0]**2 + x[1]**2
-x1 = array([2, 3])
-tol = 10**(-6)
 
-[x, counter, xs] = nonlinmin(f, x1, tol)   # Default value of tolerance (tol) set to 10**(-6) if not specified
+x1 = array([2, 3])  # Starting guess
+tol = 10**(-6)      # Tolerance [Default is 10^^(-6)]
+maxit = 10         # Maximum number of iterations [Default is 16]
 
-print('x1:', x1)
-print('tol:', tol)
-print('Function value at starting guess:', f(x1))
+[x, counter, xs] = nonlinmin(f, x1, tol, maxit)
+
+xs = xs.flatten()   # Fix the steps taken
 
 print('Startguess: ', x1)
-print('Converged point: ', x)
-print('Number of iterations:', counter)
+print('Function value at starting guess:', f(x1))
+print('Tolerance:', tol)
 
-# Fix the steps taken
-xs = xs.flatten()
+print('Converged point: ', x)
+print('Function value at converged point:', f(x))
+print('Number of iterations:', counter, '/', maxit)
+
+
 print('STeps taken:', xs)
