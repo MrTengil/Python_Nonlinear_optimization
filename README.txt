@@ -1,4 +1,8 @@
-Following two lines must be written in the terminal before execution
+Written by: Oskar Tengberg, 2019
+		https://github.com/MrTengil
 
-pip install numpy
-pip install matplotlib
+Function "nonlinmin()" minimizes an n-dimensional function with the Newton method using the first and second derivative (gradient and hessian) of the function. The objective function must be continuous, non-linear and must be twice derivable.
+
+------------------------------------
+The file "problem.py" is an example on how to use the minimzation function "nonlinmin()".
+
